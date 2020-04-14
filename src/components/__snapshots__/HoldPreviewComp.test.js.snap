@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HoldPreviewComp renders the UI as expected 1`] = `
+<div
+  className="holdPreview"
+>
+   
+  ,
+   
+   
+    - 
+   
+   
+  ,
+   
+   
+  <button
+    id="delete-button"
+    onClick={[Function]}
+  >
+    REMOVE
+  </button>
+</div>
+`;

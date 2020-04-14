@@ -1,0 +1,13 @@
+.multi-date-selector{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    border: 1px dotted red;
+    padding: 15px;
+    text-align: center;
+}
+.add-hold-range-button{
+    width: 100%;
+}

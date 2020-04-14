@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MultiHoldSelector renders the UI as expected 1`] = `
+<div
+  className="multi-date-selector"
+>
+  <div
+    className="range-selector"
+  >
+    FROM:
+    <br />
+    <select
+      className="month-selector"
+      onChange={[Function]}
+    >
+      <option>
+        January
+      </option>
+      <option>
+        February
+      </option>
+      <option>
+        March
+      </option>
+      <option>
+        April
+      </option>
+      <option>
+        May
+      </option>
+      <option>
+        June
+      </option>
+      <option>
+        July
+      </option>
+      <option>
+        August
+      </option>
+      <option>
+        September
+      </option>
+      <option>
+        October
+      </option>
+      <option>
+        November
+      </option>
+      <option>
+        December
+      </option>
+    </select>
+    <select
+      className="day-selector"
+      onChange={[Function]}
+    />
+    <select
+      className="year-selector"
+      onChange={[Function]}
+    >
+      <option>
+        2020
+      </option>
+      <option>
+        2021
+      </option>
+    </select>
+    <br />
+    THRU: 
+    <br />
+    <select
+      className="end-month-selector"
+      onChange={[Function]}
+    >
+      <option>
+        January
+      </option>
+      <option>
+        February
+      </option>
+      <option>
+        March
+      </option>
+      <option>
+        April
+      </option>
+      <option>
+        May
+      </option>
+      <option>
+        June
+      </option>
+      <option>
+        July
+      </option>
+      <option>
+        August
+      </option>
+      <option>
+        September
+      </option>
+      <option>
+        October
+      </option>
+      <option>
+        November
+      </option>
+      <option>
+        December
+      </option>
+    </select>
+    <select
+      className="end-day-selector"
+      onChange={[Function]}
+    />
+    <select
+      className="end-year-selector"
+      onChange={[Function]}
+    >
+      <option>
+        2020
+      </option>
+      <option>
+        2021
+      </option>
+    </select>
+    <div
+      className="current-add"
+    >
+      <div
+        className="current-add-header"
+      >
+        CURRENTLY ADDING HOLDS FROM:
+      </div>
+       
+      , 
+       thru 
+       
+      , 
+    </div>
+    <br />
+    <br />
+  </div>
+  <button
+    className="add-hold-range-button"
+    id="add-hold-range"
+  >
+    +ADD MORE
+  </button>
+  <br />
+  <div
+    className="multi-hold-preview"
+  />
+</div>
+`;

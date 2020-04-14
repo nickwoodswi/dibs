@@ -1,0 +1,108 @@
+html { 
+    background: url(images/background.jpeg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  header{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      color: rgb(255, 0, 0, .85);
+      font-size: 48px;
+      transform: scaleY(1.5);
+      font-style: italic;
+  }
+    .app-intro{
+        max-width: 600px;
+        font-size: 16px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: rgb(0, 0, 0, .9);
+        color: white;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+.form-intro{
+    margin-top: 100px;
+    width: 100%;
+    text-align: center;
+    color: rgb(255, 0, 0, .85);
+    font-size: 24px;
+    transform: scaleY(1.5);
+    font-style: italic;
+}
+
+  .contact-spec{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: rgb(0, 0, 0, 0.9);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 15px;
+      color: white;
+  }
+    input[type="text"]{
+        width: 100%;
+        height: 24px;
+        font-size: 18px;
+    }
+    .first-name{
+        width: 200px;
+        margin: 5px;
+        font-style: italic;
+        font-size: 18px;
+    }
+    .last-name{
+        width: 200px;
+        margin: 5px;
+        font-style: italic;
+        font-size: 18px;
+    }
+    .email{
+        width: 200px;
+        margin: 5px;
+        font-style: italic;
+        font-size: 18px;
+    }
+
+  .contact-types{
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+      justify-content: center;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: rgb(0, 0, 0, 0.9);
+      color: white;
+      padding: 15px;
+
+  }
+    .contact-types-header{
+        width: 100%;
+        font-size: 24px;
+        font-style: italic;
+        margin-bottom: 10px;
+    }
+    .contact-type{
+        width: 100px;
+        height: 75px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 5px;
+        color: black;
+        background-color: white;
+    }
+        .contact-type:hover, .active div{
+            background-color: rgb(255, 0, 0, .8);
+            color: white;
+        }
+        a{text-decoration: none}

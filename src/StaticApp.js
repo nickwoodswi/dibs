@@ -11,7 +11,7 @@ import Landing from './components/Landing.js'
 import HoldConfirmation from './components/HoldConfirmation.js'
 
 
-class App extends Component {
+class StaticApp extends Component {
 
   constructor() {
     super()
@@ -246,42 +246,44 @@ class App extends Component {
     })
 
     //get holds in db and compare new holds to set hold order
-    fetch('http://localhost:9090/holds', {
-      method: 'GET',
-      body: JSON.stringify(),
-      headers: {
-        "Content-Type": "application/json",
-      }
-    })
-      .then(response => response.json())
-      .then(data => {
-        holds.map(hold => {
-          let holdOrder = 1
-          data.map(holdInDb => {
-            if (holdInDb.hold_date == hold.hold_date) {holdOrder++}
-          })
-          hold.hold_number = holdOrder
-          let confirmationObj = {}
-          confirmationObj[hold.hold_date] = hold.hold_number
-          this.state.holds_added.push(confirmationObj)
-        })
+
+    // fetch('http://localhost:9090/holds', {
+    //   method: 'GET',
+    //   body: JSON.stringify(),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   }
+    // })
+    //   .then(response => response.json())
+    //   .then(data => {
+        // holds.map(hold => {
+        //   let holdOrder = 1
+        //   data.map(holdInDb => {
+        //     if (holdInDb.hold_date == hold.hold_date) {holdOrder++}
+        //   })
+        //   hold.hold_number = holdOrder
+        //   let confirmationObj = {}
+        //   confirmationObj[hold.hold_date] = hold.hold_number
+        //   this.state.holds_added.push(confirmationObj)
+        // })
+
         this.handleAddHolds(holds, routerProps)
-      })    
+
   }
 
   handleAddHolds(holds, routerProps) {
 
     //post new holds
     holds.map(hold => {
-      fetch('http://localhost:9090/holds', {
-        method: 'POST',
-        body: JSON.stringify(hold),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-      .then(response => response.json())
-      .then(hold => {
+    //   fetch('http://localhost:9090/holds', {
+    //     method: 'POST',
+    //     body: JSON.stringify(hold),
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //   })
+    //   .then(response => response.json())
+    //   .then(hold => {
 
         console.log(hold)
         this.setState({
@@ -291,7 +293,7 @@ class App extends Component {
         })
         routerProps.history.push('/confirmation')
       })
-    })
+    //})
 
   }
 
@@ -376,5 +378,5 @@ class App extends Component {
     )
   }
 }
-export default App;
+export default StaticApp;
 

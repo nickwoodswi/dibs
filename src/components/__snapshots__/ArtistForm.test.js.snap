@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArtistForm renders the UI as expected 1`] = `
+<div
+  className="artist-form"
+>
+  <div
+    className="hold-type-header"
+  >
+    PLACING HOLD(S) ON:
+  </div>
+  <div
+    className="hold-type-buttons"
+  >
+    <a
+      href="/artist/single"
+      onClick={[Function]}
+    >
+      <button
+        id="single"
+        name="hold_type"
+        onClick={[Function]}
+        value="single"
+      >
+        A SINGLE DATE
+      </button>
+    </a>
+    <a
+      href="/artist/range"
+      onClick={[Function]}
+    >
+      <button
+        id="range"
+        name="hold_type"
+        onClick={[Function]}
+        value="range"
+      >
+        A RANGE OF DATES
+      </button>
+    </a>
+    <a
+      href="/artist/multi"
+      onClick={[Function]}
+    >
+      <button
+        id="multiple"
+        name="hold_type"
+        onClick={[Function]}
+        value="multiple"
+      >
+        MULTIPLE DATES
+      </button>
+    </a>
+  </div>
+  <div
+    className="performance-type-detail"
+  >
+    FOR:
+    <input
+      onChange={[Function]}
+      placeholder="Band, Artist, or Performer Title/Name"
+      type="text"
+    />
+    <input
+      onChange={[Function]}
+      placeholder="Your Home ZIP Code"
+      type="text"
+    />
+    <input
+      id="band"
+      name="performance_type"
+      onChange={[Function]}
+      type="radio"
+      value="band"
+    />
+    Band
+    <input
+      id="solo"
+      name="performance_type"
+      onChange={[Function]}
+      type="radio"
+      value="solo"
+    />
+    Solo Performer
+    <input
+      id="dj"
+      name="performance_type"
+      onChange={[Function]}
+      type="radio"
+      value="dj"
+    />
+    DJ
+  </div>
+  <div
+    className="media"
+  >
+    Please link to your music, or a look at your performance:
+    <input
+      onChange={[Function]}
+      placeholder="Spotify Artist ID"
+      type="text"
+    />
+    <input
+      onChange={[Function]}
+      placeholder="YouTube Channel or Video"
+      type="text"
+    />
+    <input
+      onChange={[Function]}
+      placeholder="Facebook Page"
+      type="text"
+    />
+    <input
+      onChange={[Function]}
+      placeholder="Bandcamp"
+      type="text"
+    />
+    <input
+      onChange={[Function]}
+      placeholder="Website"
+      type="text"
+    />
+  </div>
+  <div
+    className="support-need"
+  >
+    Do you need us to book local support?
+    <input
+      id="support_need"
+      name="support_need"
+      onChange={[Function]}
+      type="radio"
+      value="yes"
+    />
+    Yes
+    <input
+      id="support_need"
+      name="support_need"
+      onChange={[Function]}
+      type="radio"
+      value="no"
+    />
+    No
+  </div>
+  <div
+    className="event-detail"
+  >
+    Provide any specific technical needs or details here:
+    <textarea
+      id="event-detail"
+      onChange={[Function]}
+      type="text"
+    />
+  </div>
+  <div
+    className="place-hold-button-container"
+  >
+    <button
+      onClick={[Function]}
+    >
+      PLACE HOLDS
+    </button>
+  </div>
+</div>
+`;

@@ -1,0 +1,11 @@
+.holdPreview{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+#delete-button{
+    margin-top: 5px;
+    height: 36px;
+    background-color: white;
+}

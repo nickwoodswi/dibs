@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrentAdd renders the UI as expected 1`] = `
+<div
+  className="current-add"
+>
+  <div
+    className="current-add-header"
+  >
+    CURRENTLY ADDING HOLDS FROM:
+  </div>
+   
+  , 
+   thru 
+   
+  , 
+</div>
+`;

@@ -1,0 +1,415 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AgentForm renders the UI as expected 1`] = `
+<div
+  className="agent-form"
+>
+  <div
+    className="hold-type-header"
+  >
+    PLACING HOLD(S) ON:
+  </div>
+  <div
+    className="hold-type-buttons"
+  >
+    <a
+      href="/agent/single"
+      onClick={[Function]}
+    >
+      <button
+        id="single"
+        name="hold_type"
+        onClick={[Function]}
+        value="single"
+      >
+        A SINGLE DATE
+      </button>
+    </a>
+    <a
+      href="/agent/range"
+      onClick={[Function]}
+    >
+      <button
+        id="range"
+        name="hold_type"
+        onClick={[Function]}
+        value="range"
+      >
+        A RANGE OF DATES
+      </button>
+    </a>
+    <a
+      href="/agent/multi"
+      onClick={[Function]}
+    >
+      <button
+        id="multiple"
+        name="hold_type"
+        onClick={[Function]}
+        value="multiple"
+      >
+        MULTIPLE DATES
+      </button>
+    </a>
+  </div>
+  <div
+    className="performance-type-detail"
+  >
+    FOR:
+    <input
+      onChange={[Function]}
+      placeholder="Band, Artist, or Performer Title/Name"
+      type="text"
+    />
+    <input
+      onChange={[Function]}
+      placeholder="Your Home ZIP Code"
+      type="text"
+    />
+    <input
+      id="band"
+      name="performance_type"
+      onChange={[Function]}
+      type="radio"
+      value="band"
+    />
+    Band
+    <input
+      id="solo"
+      name="performance_type"
+      onChange={[Function]}
+      type="radio"
+      value="solo"
+    />
+    Solo Performer
+    <input
+      id="dj"
+      name="performance_type"
+      onChange={[Function]}
+      type="radio"
+      value="dj"
+    />
+    DJ
+  </div>
+  <div
+    className="media"
+  >
+    Please link to your client's music, or a look at their performance:
+    <input
+      onChange={[Function]}
+      placeholder="Spotify Artist ID"
+      type="text"
+    />
+    <input
+      onChange={[Function]}
+      placeholder="YouTube Channel or Video"
+      type="text"
+    />
+    <input
+      onChange={[Function]}
+      placeholder="Facebook Page"
+      type="text"
+    />
+    <input
+      onChange={[Function]}
+      placeholder="Bandcamp"
+      type="text"
+    />
+    <input
+      onChange={[Function]}
+      placeholder="Website"
+      type="text"
+    />
+  </div>
+  <div
+    className="support-need"
+  >
+    Do you need us to book local support?
+    <input
+      id="support_need"
+      name="support_need"
+      onChange={[Function]}
+      type="radio"
+      value="yes"
+    />
+    Yes
+    <input
+      id="support_need"
+      name="support_need"
+      onChange={[Function]}
+      type="radio"
+      value="no"
+    />
+    No
+  </div>
+  <div
+    className="package-support-header"
+  >
+    PACKAGE SUPPORT
+  </div>
+  <div
+    className="performance-type-detail"
+  >
+    <input
+      onChange={[Function]}
+      placeholder="Direct Support"
+      type="text"
+    />
+    <input
+      id="band-2"
+      name="support_type-2"
+      onChange={[Function]}
+      type="radio"
+      value="band"
+    />
+    Band
+    <input
+      id="solo-2"
+      name="support_type-2"
+      onChange={[Function]}
+      type="radio"
+      value="solo"
+    />
+    Solo Performer
+    <input
+      id="dj-2"
+      name="support_type-2"
+      onChange={[Function]}
+      type="radio"
+      value="dj"
+    />
+    DJ
+  </div>
+  <div
+    className="media"
+  >
+    <input
+      onChange={[Function]}
+      placeholder="Spotify Artist ID"
+      type="text"
+    />
+    <input
+      onChange={[Function]}
+      placeholder="YouTube Video or Channel"
+      type="text"
+    />
+    <input
+      onChange={[Function]}
+      placeholder="Facebook Page"
+      type="text"
+    />
+    <input
+      onChange={[Function]}
+      placeholder="Bandcamp"
+      type="text"
+    />
+    <input
+      onChange={[Function]}
+      placeholder="Website"
+      type="text"
+    />
+  </div>
+  <div
+    className="performance-type-detail"
+  >
+    <input
+      onChange={[Function]}
+      placeholder="Opener"
+      type="text"
+    />
+    <input
+      id="band-3"
+      name="support_type3"
+      onChange={[Function]}
+      type="radio"
+      value="band"
+    />
+    Band
+    <input
+      id="solo-3"
+      name="support_type3"
+      onChange={[Function]}
+      type="radio"
+      value="solo"
+    />
+    Solo Performer
+    <input
+      id="dj-3"
+      name="support_type3"
+      onChange={[Function]}
+      type="radio"
+      value="dj"
+    />
+    DJ
+  </div>
+  <div
+    className="media"
+  >
+    <input
+      onChange={[Function]}
+      placeholder="Spotify Artist ID"
+      type="text"
+    />
+    <br />
+    <input
+      onChange={[Function]}
+      placeholder="Youtube Video or Channel"
+      type="text"
+    />
+    <br />
+    <input
+      onChange={[Function]}
+      placeholder="Facebook Page"
+      type="text"
+    />
+    <br />
+    <input
+      onChange={[Function]}
+      placeholder="Bandcamp"
+      type="text"
+    />
+    <br />
+    <input
+      onChange={[Function]}
+      placeholder="Website"
+      type="text"
+    />
+    <br />
+  </div>
+  <div
+    className="performance-type-detail"
+  >
+    <input
+      onChange={[Function]}
+      placeholder="Second Opener Title"
+      type="text"
+    />
+    <input
+      id="band-4"
+      name="support_type4"
+      onChange={[Function]}
+      type="radio"
+      value="band"
+    />
+    Band
+    <input
+      id="solo-4"
+      name="support_type4"
+      onChange={[Function]}
+      type="radio"
+      value="solo"
+    />
+    Solo Performer
+    <input
+      id="dj-4"
+      name="support_type4"
+      onChange={[Function]}
+      type="radio"
+      value="dj"
+    />
+    DJ
+  </div>
+  <div
+    className="media"
+  >
+    <input
+      onChange={[Function]}
+      placeholder="Spotify Artist ID"
+      type="text"
+    />
+    <br />
+    <input
+      onChange={[Function]}
+      placeholder="YouTube Video or Channel"
+      type="text"
+    />
+    <br />
+    <input
+      onChange={[Function]}
+      placeholder="Facebook Page"
+      type="text"
+    />
+    <br />
+    <input
+      onChange={[Function]}
+      placeholder="Bandcamp"
+      type="text"
+    />
+    <br />
+    <input
+      onChange={[Function]}
+      placeholder="Website"
+      type="text"
+    />
+    <br />
+  </div>
+  <div
+    className="event-detail"
+  >
+    Provide any specific technical needs or details here:
+    <input
+      id="event-detail"
+      onChange={[Function]}
+      type="text"
+    />
+  </div>
+  <div
+    className="org-detail"
+  >
+    Agency: 
+    <input
+      onChange={[Function]}
+      placeholder="Name"
+      type="text"
+    />
+    Phone: 
+    <input
+      onChange={[Function]}
+      placeholder="###"
+      type="text"
+    />
+    <br />
+    <br />
+    Mailing Address:
+    <input
+      onChange={[Function]}
+      placeholder="Street 1"
+      type="text"
+    />
+    <input
+      onChange={[Function]}
+      placeholder="Street 2"
+      type="text"
+    />
+    <input
+      onChange={[Function]}
+      placeholder="City"
+      type="text"
+    />
+    <input
+      onChange={[Function]}
+      placeholder="Country"
+      type="text"
+    />
+    <input
+      onChange={[Function]}
+      placeholder="Postal Code"
+      type="text"
+    />
+  </div>
+  <div
+    className="place-hold-button-container"
+  >
+    <a
+      href="/holdconfirmation"
+      onClick={[Function]}
+    >
+      <button
+        onClick={[Function]}
+      >
+        PLACE HOLDS
+      </button>
+    </a>
+  </div>
+</div>
+`;
