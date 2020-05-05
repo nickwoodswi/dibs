@@ -16,9 +16,9 @@ class Landing extends Component {
             
             <p>When that occurs, DIBS generates pre-built emails at the click of a button to make proactive communication with the agent a quicker process. And contacts assigned to each hold are stored in the database regardless of hold type, permanently, which makes DIBS a great tool for building a call list - by location - when empty dates need filling, or local support is required for a headliner without history in a market.</p>
 
-            <p><b>Try DIBS below by placing a hold</b>, see how it's displayed to venue staff, and imagine how much time you'd save using it.</p>
+            <p><b>Try DIBS below by placing a hold in the form</b>, see how it's displayed to venue staff in the back office, and imagine how much time you'd save using it.</p>
 
-            <p><i>(c) 2020 - Nick Woods / nick.woods.wi@gmail.com</i></p>
+            <p><i>©2020 - Nick Woods / <a href="mailto:nick.woods.wi@gmail.com" id='contact'>nick.woods.wi@gmail.com</a></i></p>
           </div>
         )
     }

@@ -24,7 +24,7 @@ class MultiDateSelector extends Component {
           <button className="add-hold-range-button"
               id="add-hold-range" 
               onClick={this.props.addHold}>
-          +ADD MORE</button><br/>
+          +ADD HOLD RANGE</button><br/>
           <HoldPreview appState={this.props.appState} deleteHold={this.props.deleteHold} />
         </div>
       )

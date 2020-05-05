@@ -9,6 +9,8 @@ import PrivateForm from './components/PrivateForm'
 import './App.css'
 import Landing from './components/Landing.js'
 import HoldConfirmation from './components/HoldConfirmation.js'
+import config from './config'
+const API_URL=config.API_URL
 
 
 class App extends Component {
@@ -70,9 +72,7 @@ class App extends Component {
     }
   }
 
-  handleState = (propName, value) => {
-    console.log(propName, value)
-    console.log('handleState clicked')
+  handleState = (propName, value, routerProps) => {
     let changes = {}
     if (propName == 'hold_type') {
       changes = {
@@ -99,7 +99,6 @@ class App extends Component {
   }
 
   addHold = () => {
-    console.log('addHold listening')
       this.setState({
           holds: this.state.holds.concat({
           holdmonth_start: this.state.holdmonth_start,
@@ -137,7 +136,8 @@ class App extends Component {
     
     //get form state
     const state = {...this.state}
-
+    const path = routerProps.location.pathname.split('/')[2]
+    state.hold_type = path
     //set holds to post for single date ranges
     if (state.hold_type == 'single' || state.hold_type == 'range') {
       state.holds = [{
@@ -169,8 +169,8 @@ class App extends Component {
     }
 
     let holdDatesArray = []
-    
-    state.holds.map(hold => {
+    for (let i = 0; i < state.holds.length; i++) {
+      const hold = state.holds[i]
       let startMonthIndex = Object.keys(MonthDayCounts).indexOf(hold.holdmonth_start)
       let endMonthIndex = Object.keys(MonthDayCounts).indexOf(hold.holdmonth_end)
       let holdRangeStart = new Date(hold.holdyear_start, startMonthIndex, hold.holdday_start)
@@ -190,7 +190,7 @@ class App extends Component {
         holdDatesArray.push(new Date(holdRangeStart))
         holdRangeStart.setDate(holdRangeStart.getDate() + 1)
       }
-    })
+    }
     
     //build a hold object for each date object
     const holds = []
@@ -246,7 +246,7 @@ class App extends Component {
     })
 
     //get holds in db and compare new holds to set hold order
-    fetch('http://localhost:9090/holds', {
+    fetch(`${API_URL}/holds/dates`, {
       method: 'GET',
       body: JSON.stringify(),
       headers: {
@@ -258,12 +258,15 @@ class App extends Component {
         holds.map(hold => {
           let holdOrder = 1
           data.map(holdInDb => {
-            if (holdInDb.hold_date == hold.hold_date) {holdOrder++}
+            if (holdInDb.hold_date.toString().substr(0, 26) == hold.hold_date.toString().substr(0, 26)) {holdOrder++}
           })
           hold.hold_number = holdOrder
           let confirmationObj = {}
           confirmationObj[hold.hold_date] = hold.hold_number
-          this.state.holds_added.push(confirmationObj)
+          this.setState({
+            holds_added: [...this.state.holds_added, confirmationObj]
+          })
+          // this.state.holds_added.push(confirmationObj)
         })
         this.handleAddHolds(holds, routerProps)
       })    
@@ -272,8 +275,8 @@ class App extends Component {
   handleAddHolds(holds, routerProps) {
 
     //post new holds
-    holds.map(hold => {
-      fetch('http://localhost:9090/holds', {
+    const promises = holds.map(hold => {
+      return fetch(`${API_URL}/holds`, {
         method: 'POST',
         body: JSON.stringify(hold),
         headers: {
@@ -282,17 +285,17 @@ class App extends Component {
       })
       .then(response => response.json())
       .then(hold => {
-
-        console.log(hold)
         this.setState({
           holds: this.state.holds.filter(
             hold => !(hold)
           )
         })
-        routerProps.history.push('/confirmation')
       })
     })
-
+    Promise.all(promises)
+    .then(data => {
+      routerProps.history.push('/confirmation')
+    })
   }
 
   render () {
@@ -303,14 +306,19 @@ class App extends Component {
         <h1>DIBS</h1>
 
       </header>
+      <nav>
+        <NavLink to='/about'><div className="navlink">ABOUT</div></NavLink>
+        <NavLink to='/' exact><div className="navlink">FORM</div></NavLink>
+        <a href="https://dibs-admin.nickwoodswi.now.sh/" target="_blank"><div className="navlink">BACK OFFICE</div></a>
+      </nav>
       <main className='App'>
         <Switch>
           <Route path='/confirmation' render={routerProps => (
             <HoldConfirmation holds_added={this.state.holds_added} />
           )} />
+          <Route path='/about'><Landing /></Route>
 
         <Route path='/'>
-          <Landing />
 
           <div className="form-intro"><h2>PLACE A HOLD INSTANTLY:</h2></div>
 
@@ -336,6 +344,7 @@ class App extends Component {
                   handleState={this.handleState} 
                   handleSingleHold={this.handleSingleHold}
                   addHold={this.addHold}
+                  routerProps={routerProps}
                   deleteHold={this.deleteHold}
                   submitForm={this.submitForm.bind(this, routerProps)} />
               )} />

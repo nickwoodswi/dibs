@@ -12,14 +12,14 @@ class HoldConfirmation extends Component {
                 <div className="hold-confirmation">
                     <div className="hold-confirmation-ack">
                         <h2><i>THANKS FOR PLACING HOLDS AT OUR VENUE!</i></h2>
-                        <h3>We will respond with questions, concerns, and/or an offer within the next 48 hours, or within 4 months of your hold dates - whichever comes later. <br/>
-                        <br/>
-                        <i>Your order for the following dates is currently:</i> </h3>
+                        <p>We will respond with questions, concerns, and/or an offer within the next 48 hours, or within 4 months of your hold dates - whichever comes later. </p>
+                        <h3><i>Your order for the following dates is currently:</i></h3>
                     </div>
                     <div className="date-order">
-                        {this.props.holds_added.map(hold => {
+                        {this.props.holds_added.map((hold, idx) => {
                             return(
                                 <ConfirmationComponent 
+                                    key={idx}
                                     holdDate={Object.keys(hold)}
                                     holdOrder={Object.values(hold)} />
                             )

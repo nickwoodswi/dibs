@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import StartDateSelector from './StartDateSelector'
 import EndDateSelector from './EndDateSelector'
@@ -13,9 +13,9 @@ class PrivateForm extends Component {
         <div className="private-form">
             <div className="hold-type-header">PLACING HOLD(S) ON:</div>
             <div className="hold-type-buttons">
-                <Link to="/promoter/single"><button id="single" name="hold_type" value="single" onClick={e => this.props.handleState('hold_type', e.target.value)}>A SINGLE DATE</button></Link>
-                <Link to="/promoter/range"><button id="range" name="hold_type" value="range" onClick={e => this.props.handleState('hold_type', e.target.value)}>A RANGE OF DATES</button></Link>
-                <Link to="/promoter/multi"><button id="multiple" name="hold_type" value="multiple" onClick={e => this.props.handleState('hold_type', e.target.value)}>MULTIPLE DATES</button></Link>
+                <NavLink to="/private/single"><div id="single" className="hold_type" value="single" onClick={e => this.props.handleState('hold_type', e.target.value)}>A SINGLE DATE</div></NavLink>
+                <NavLink to="/private/range"><div id="range" className="hold_type" value="range" onClick={e => this.props.handleState('hold_type', e.target.value)}>A RANGE OF DATES</div></NavLink>
+                <NavLink to="/private/multi"><div id="multiple" className="hold_type" value="multiple" onClick={e => this.props.handleState('hold_type', e.target.value)}>MULTIPLE DATES</div></NavLink>
             </div>
             <Route path="/private/single">
                 <SingleHold 
@@ -58,12 +58,12 @@ class PrivateForm extends Component {
         </div>
 
             <div className="event-detail">
-                Provide any specific event needs, ideas, or details here:
-                <input type="text" id="event-detail" onChange={e => this.props.handleState('event_detail', e.target.value)} value={this.props.appState.event_detail} />
+                Provide any specific technical needs or details here:
+                <textarea id="event-detail" value={this.props.appState.event_detail} type="text" onChange={e => this.props.handleState('event_detail', e.target.value)}></textarea>
             </div>
 
             <div className="place-hold-button-container">
-                <Link to="/holdconfirmation"><button onClick={e => this.props.submitForm()}>PLACE HOLDS</button></Link>
+                <NavLink to="/holdconfirmation"><div className="submit-button" onClick={e => this.props.submitForm()}>+PLACE HOLDS</div></NavLink>
             </div>
         
         </div>

@@ -13,43 +13,46 @@ exports[`ArtistForm renders the UI as expected 1`] = `
     className="hold-type-buttons"
   >
     <a
+      aria-current={null}
       href="/artist/single"
       onClick={[Function]}
     >
-      <button
+      <div
+        className="hold_type"
         id="single"
-        name="hold_type"
         onClick={[Function]}
         value="single"
       >
         A SINGLE DATE
-      </button>
+      </div>
     </a>
     <a
+      aria-current={null}
       href="/artist/range"
       onClick={[Function]}
     >
-      <button
+      <div
+        className="hold_type"
         id="range"
-        name="hold_type"
         onClick={[Function]}
         value="range"
       >
         A RANGE OF DATES
-      </button>
+      </div>
     </a>
     <a
+      aria-current={null}
       href="/artist/multi"
       onClick={[Function]}
     >
-      <button
+      <div
+        className="hold_type"
         id="multiple"
-        name="hold_type"
         onClick={[Function]}
         value="multiple"
       >
         MULTIPLE DATES
-      </button>
+      </div>
     </a>
   </div>
   <div
@@ -66,30 +69,34 @@ exports[`ArtistForm renders the UI as expected 1`] = `
       placeholder="Your Home ZIP Code"
       type="text"
     />
-    <input
-      id="band"
-      name="performance_type"
-      onChange={[Function]}
-      type="radio"
-      value="band"
-    />
-    Band
-    <input
-      id="solo"
-      name="performance_type"
-      onChange={[Function]}
-      type="radio"
-      value="solo"
-    />
-    Solo Performer
-    <input
-      id="dj"
-      name="performance_type"
-      onChange={[Function]}
-      type="radio"
-      value="dj"
-    />
-    DJ
+    <div
+      className="performer-type"
+    >
+      <input
+        id="band"
+        name="performance_type"
+        onChange={[Function]}
+        type="radio"
+        value="band"
+      />
+      Band
+      <input
+        id="solo"
+        name="performance_type"
+        onChange={[Function]}
+        type="radio"
+        value="solo"
+      />
+      Solo Performer
+      <input
+        id="dj"
+        name="performance_type"
+        onChange={[Function]}
+        type="radio"
+        value="dj"
+      />
+      DJ
+    </div>
   </div>
   <div
     className="media"
@@ -125,22 +132,26 @@ exports[`ArtistForm renders the UI as expected 1`] = `
     className="support-need"
   >
     Do you need us to book local support?
-    <input
-      id="support_need"
-      name="support_need"
-      onChange={[Function]}
-      type="radio"
-      value="yes"
-    />
-    Yes
-    <input
-      id="support_need"
-      name="support_need"
-      onChange={[Function]}
-      type="radio"
-      value="no"
-    />
-    No
+    <div
+      className="support-radio"
+    >
+      <input
+        id="support_need"
+        name="support_need"
+        onChange={[Function]}
+        type="radio"
+        value="yes"
+      />
+      Yes
+      <input
+        id="support_need"
+        name="support_need"
+        onChange={[Function]}
+        type="radio"
+        value="no"
+      />
+      No
+    </div>
   </div>
   <div
     className="event-detail"
@@ -155,11 +166,18 @@ exports[`ArtistForm renders the UI as expected 1`] = `
   <div
     className="place-hold-button-container"
   >
-    <button
+    <a
+      aria-current={null}
+      href="/holdconfirmation"
       onClick={[Function]}
     >
-      PLACE HOLDS
-    </button>
+      <div
+        className="submit-button"
+        onClick={[Function]}
+      >
+        +PLACE HOLDS
+      </div>
+    </a>
   </div>
 </div>
 `;

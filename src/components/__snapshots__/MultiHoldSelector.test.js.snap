@@ -145,7 +145,7 @@ exports[`MultiHoldSelector renders the UI as expected 1`] = `
     className="add-hold-range-button"
     id="add-hold-range"
   >
-    +ADD MORE
+    +ADD HOLD RANGE
   </button>
   <br />
   <div

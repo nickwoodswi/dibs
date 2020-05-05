@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import StartDateSelector from './StartDateSelector'
 import EndDateSelector from './EndDateSelector'
@@ -8,17 +8,23 @@ import SingleHold from './SingleHold'
 import './ArtistForm.css'
 
 class ArtistForm extends Component {
+
+    componentDidMount() {
+        console.log(this.props.routerProps)
+    }
+    
     static defaultProps = {
         appState: {}
     }
+
     render() {
         return(
             <div className="artist-form">
                 <div className="hold-type-header">PLACING HOLD(S) ON:</div>
                 <div className="hold-type-buttons">
-                    <Link to="/artist/single"><button id="single" name="hold_type" value="single" onClick={e => this.props.handleState('hold_type', e.target.value)}>A SINGLE DATE</button></Link>
-                    <Link to="/artist/range"><button id="range" name="hold_type" value="range" onClick={e => this.props.handleState('hold_type', e.target.value)}>A RANGE OF DATES</button></Link>
-                    <Link to="/artist/multi"><button id="multiple" name="hold_type" value="multiple" onClick={e => this.props.handleState('hold_type', e.target.value)}>MULTIPLE DATES</button></Link>
+                    <NavLink to="/artist/single" onClick={e => this.props.handleState('hold_type', e.target.value)}><div id="single" className="hold_type" value="single">A SINGLE DATE</div></NavLink>
+                    <NavLink to="/artist/range" onClick={e => this.props.handleState('hold_type', e.target.value)}><div id="range" className="hold_type" value="range">A RANGE OF DATES</div></NavLink>
+                    <NavLink to="/artist/multi" onClick={e => this.props.handleState('hold_type', e.target.value)}><div id="multiple" className="hold_type" value="multiple">MULTIPLE DATES</div></NavLink>
                 </div>
                 <Route path="/artist/single">
                     <SingleHold 
@@ -49,9 +55,11 @@ class ArtistForm extends Component {
                 FOR:
                     <input type="text" placeholder="Band, Artist, or Performer Title/Name" value={this.props.appState.contact_act} onChange={e => this.props.handleState('contact_act', e.target.value)} />
                     <input type="text" placeholder="Your Home ZIP Code" value={this.props.appState.org_zip} onChange={e => this.props.handleState('org_zip', e.target.value)} />
-                    <input type="radio" id="band" name="performance_type" value="band" onChange={e => this.props.handleState('event_type', e.target.value)} />Band
-                    <input type="radio" id="solo" name="performance_type" value="solo" onChange={e => this.props.handleState('event_type', e.target.value)} />Solo Performer
-                    <input type="radio" id="dj" name="performance_type" value="dj" onChange={e => this.props.handleState('event_type', e.target.value)} />DJ
+                    <div className="performer-type">
+                        <input type="radio" id="band" name="performance_type" value="band" onChange={e => this.props.handleState('event_type', e.target.value)} />Band
+                        <input type="radio" id="solo" name="performance_type" value="solo" onChange={e => this.props.handleState('event_type', e.target.value)} />Solo Performer
+                        <input type="radio" id="dj" name="performance_type" value="dj" onChange={e => this.props.handleState('event_type', e.target.value)} />DJ
+                    </div>
                 </div>
 
                 <div className="media">
@@ -65,8 +73,10 @@ class ArtistForm extends Component {
 
                 <div className="support-need">
                 Do you need us to book local support?
-                    <input type="radio" id="support_need" name="support_need" value="yes" onChange={e => this.props.handleState('support_need', e.target.value)} />Yes
-                    <input type="radio" id="support_need" name="support_need" value="no" onChange={e => this.props.handleState('support_need', e.target.value)} />No
+                    <div className="support-radio">
+                        <input type="radio" id="support_need" name="support_need" value="yes" onChange={e => this.props.handleState('support_need', e.target.value)} />Yes
+                        <input type="radio" id="support_need" name="support_need" value="no" onChange={e => this.props.handleState('support_need', e.target.value)} />No
+                    </div>
                 </div>
                 
                 <div className="event-detail">
@@ -75,7 +85,7 @@ class ArtistForm extends Component {
                 </div>
 
                 <div className="place-hold-button-container">
-                    <button onClick={e => this.props.submitForm()}>PLACE HOLDS</button>
+                    <div className="submit-button" onClick={e => this.props.submitForm()}>+PLACE HOLDS</div>
                 </div>
 
             </div>

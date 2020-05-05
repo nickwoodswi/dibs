@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import StartDateSelector from './StartDateSelector'
 import EndDateSelector from './EndDateSelector'
@@ -8,14 +8,17 @@ import SingleHold from './SingleHold'
 import './PromoterForm.css'
 
 class PromoterForm extends Component {
+  static defaultProps = {
+    appState: {}
+  }
   render() {
     return(
       <div className="promoter-form">
         <div className="hold-type-header">PLACING HOLD(S) ON:</div>
         <div className="hold-type-buttons">
-          <Link to="/promoter/single"><button id="single" name="hold_type" value="single" onClick={e => this.props.handleState('hold_type', e.target.value)}>A SINGLE DATE</button></Link>
-          <Link to="/promoter/range"><button id="range" name="hold_type" value="range" onClick={e => this.props.handleState('hold_type', e.target.value)}>A RANGE OF DATES</button></Link>
-          <Link to="/promoter/multi"><button id="multiple" name="hold_type" value="multiple" onClick={e => this.props.handleState('hold_type', e.target.value)}>MULTIPLE DATES</button></Link>
+          <NavLink to="/promoter/single"><div id="single" className="hold_type" value="single" onClick={e => this.props.handleState('hold_type', e.target.value)}>A SINGLE DATE</div></NavLink>
+          <NavLink to="/promoter/range"><div id="range" className="hold_type" value="range" onClick={e => this.props.handleState('hold_type', e.target.value)}>A RANGE OF DATES</div></NavLink>
+          <NavLink to="/promoter/multi"><div id="multiple" className="hold_type" value="multiple" onClick={e => this.props.handleState('hold_type', e.target.value)}>MULTIPLE DATES</div></NavLink>
         </div>
         <Route path="/promoter/single">
           <SingleHold 
@@ -28,7 +31,7 @@ class PromoterForm extends Component {
             <StartDateSelector 
               appState={this.props.appState} 
               handleState={this.props.handleState} 
-              submitForm={this.props.submitForm}/><br/>
+              submitFOrm={this.props.submitForm}/><br/>
             <EndDateSelector 
               appState={this.props.appState} 
               handleState={this.props.handleState} />
@@ -46,13 +49,15 @@ class PromoterForm extends Component {
           FOR:
             <input type="text" placeholder="Band, Artist, or Performer Title/Name" value={this.props.appState.contact_act} onChange={e => this.props.handleState('contact_act', e.target.value)} />
             <input type="text" placeholder="Your Home ZIP Code" value={this.props.appState.org_zip} onChange={e => this.props.handleState('org_zip', e.target.value)} />
-            <input type="radio" id="band" name="performance_type" value="band" onChange={e => this.props.handleState('event_type', e.target.value)} />Band
-            <input type="radio" id="solo" name="performance_type" value="solo" onChange={e => this.props.handleState('event_type', e.target.value)} />Solo Performer
-            <input type="radio" id="dj" name="performance_type" value="dj" onChange={e => this.props.handleState('event_type', e.target.value)} />DJ
-        </div>
+            <div className="performer-type">
+              <input type="radio" id="band" name="performance_type" value="band" onChange={e => this.props.handleState('event_type', e.target.value)} />Band
+              <input type="radio" id="solo" name="performance_type" value="solo" onChange={e => this.props.handleState('event_type', e.target.value)} />Solo Performer
+              <input type="radio" id="dj" name="performance_type" value="dj" onChange={e => this.props.handleState('event_type', e.target.value)} />DJ
+            </div>
+          </div>
 
         <div className="media">
-          Please link to the headlining artist's music, or a look at their performance:
+          Please link to your client's music, or a look at their performance:
             <input type="text" value={this.props.appState.spotify} placeholder="Spotify Artist ID" onChange={e => this.props.handleState('spotify', e.target.value)} />
             <input type="text" value={this.props.appState.youtube} placeholder="YouTube Channel or Video" onChange={e => this.props.handleState('youtube', e.target.value)} />
             <input type="text" value={this.props.appState.facebook} placeholder="Facebook Page" onChange={e => this.props.handleState('facebook', e.target.value)} />
@@ -70,9 +75,11 @@ class PromoterForm extends Component {
 
           <div className="performance-type-detail">
             <input type="text" onChange={e => this.props.handleState('dsupport_title', e.target.value)} value={this.props.appState.dsupport_title} placeholder="Direct Support" />
-            <input onChange={e => this.props.handleState('dsupport_type', e.target.value)} type="radio" id="band-2" name="support_type-2" value="band" />Band
-            <input onChange={e => this.props.handleState('dsupport_type', e.target.value)} type="radio" id="solo-2" name="support_type-2" value="solo" />Solo Performer
-            <input onChange={e => this.props.handleState('dsupport_type', e.target.value)} type="radio" id="dj-2" name="support_type-2" value="dj" />DJ
+            <div className="performer-type">
+              <input onChange={e => this.props.handleState('dsupport_type', e.target.value)} type="radio" id="band-2" name="support_type-2" value="band" />Band
+              <input onChange={e => this.props.handleState('dsupport_type', e.target.value)} type="radio" id="solo-2" name="support_type-2" value="solo" />Solo Performer
+              <input onChange={e => this.props.handleState('dsupport_type', e.target.value)} type="radio" id="dj-2" name="support_type-2" value="dj" />DJ
+            </div>
           </div>
 
           <div className="media">
@@ -85,9 +92,11 @@ class PromoterForm extends Component {
 
           <div className="performance-type-detail">
             <input type="text" onChange={e => this.props.handleState('opener_title', e.target.value)} value={this.props.appState.opener_title} placeholder="Opener" />
-            <input onChange={e => this.props.handleState('support_type3', e.target.value)} type="radio" id="band-3" name="support_type3" value="band" />Band
-            <input onChange={e => this.props.handleState('support_type3', e.target.value)} type="radio" id="solo-3" name="support_type3" value="solo" />Solo Performer
-            <input onChange={e => this.props.handleState('support_type3', e.target.value)} type="radio" id="dj-3" name="support_type3" value="dj" />DJ
+            <div className="performer-type">
+              <input onChange={e => this.props.handleState('support_type3', e.target.value)} type="radio" id="band-3" name="support_type3" value="band" />Band
+              <input onChange={e => this.props.handleState('support_type3', e.target.value)} type="radio" id="solo-3" name="support_type3" value="solo" />Solo Performer
+              <input onChange={e => this.props.handleState('support_type3', e.target.value)} type="radio" id="dj-3" name="support_type3" value="dj" />DJ
+            </div>
           </div>
 
           <div className="media">
@@ -99,10 +108,12 @@ class PromoterForm extends Component {
           </div>
 
           <div className="performance-type-detail">
-            <input type="text" onChange={e => this.props.handleState('opener2_title', e.target.value)} value={this.props.appState.opener2_title} placeholder="Second Opener Title" />
-            <input type="text" onChange={e => this.props.handleState('support_type4', e.target.value)} type="radio" id="band-4" name="support_type4" value="band" />Band
-            <input type="text" onChange={e => this.props.handleState('support_type4', e.target.value)} type="radio" id="solo-4" name="support_type4" value="solo" />Solo Performer
-            <input type="text" onChange={e => this.props.handleState('support_type4', e.target.value)} type="radio" id="dj-4" name="support_type4" value="dj" />DJ
+            <input type="text" onChange={e => this.props.handleState('opener2_title', e.target.value)} value={this.props.appState.opener2_title} placeholder="Second Opener" />
+            <div className="performer-type">
+              <input type="text" onChange={e => this.props.handleState('support_type4', e.target.value)} type="radio" id="band-4" name="support_type4" value="band" />Band
+              <input type="text" onChange={e => this.props.handleState('support_type4', e.target.value)} type="radio" id="solo-4" name="support_type4" value="solo" />Solo Performer
+              <input type="text" onChange={e => this.props.handleState('support_type4', e.target.value)} type="radio" id="dj-4" name="support_type4" value="dj" />DJ
+            </div>
           </div>
 
           <div className="media">
@@ -114,13 +125,13 @@ class PromoterForm extends Component {
           </div>
           
 
-        <div className="event-detail">
-          Provide any specific technical needs or details here:
-          <input id="event-detail" type="text" onChange={e => this.props.handleState('event_detail', e.target.value)} value={this.props.appState.event_detail} />
-        </div>
+          <div className="event-detail">
+            Provide any specific technical needs or details here:
+            <textarea id="event-detail" value={this.props.appState.event_detail} type="text" onChange={e => this.props.handleState('event_detail', e.target.value)}></textarea>
+          </div>
 
         <div className="org-detail">
-          Your Organization: <input type="text" onChange={e => this.props.handleState('contact_org', e.target.value)} value={this.props.appState.contact_org} placeholder="Name" />
+          Organization: <input type="text" onChange={e => this.props.handleState('contact_org', e.target.value)} value={this.props.appState.contact_org} placeholder="Name" />
           Phone: <input type="text" onChange={e => this.props.handleState('contact_phone', e.target.value)} value={this.props.appState.contact_phone} placeholder="###" /><br/><br/>
           Mailing Address:
           <input type="text" onChange={e => this.props.handleState('org_street1', e.target.value)} value={this.props.appState.org_street1} placeholder="Street 1" />
@@ -131,7 +142,7 @@ class PromoterForm extends Component {
         </div>
 
         <div className="place-hold-button-container">
-          <Link to="/holdconfirmation"><button onClick={e => this.props.submitForm()}>PLACE HOLDS</button></Link>
+          <NavLink to="/holdconfirmation"><div className="submit-button" onClick={e => this.props.submitForm()}>+PLACE HOLDS</div></NavLink>
         </div>
 
       </div>

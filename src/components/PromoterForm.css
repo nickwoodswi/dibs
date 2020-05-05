@@ -1,31 +1,45 @@
 .promoter-form{
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-    max-width: 600px;
-    padding: 15px;
+    justify-content: center;
     background-color: rgb(0, 0, 0, .9);
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    padding: 15px;
     color: white;
-    font-style: italic;
     font-size: 24px;
 }
     .hold-type-header{
         width: 100%;
         text-align: center;
+        font-style: italic;
     }
     .hold-type-buttons{
         display: flex;
-        justify-content: space-evenly;
+        flex-wrap: wrap;
+        justify-content: center;
         width: 100%;
+        margin-left: auto;
+        margin-right: auto;
         margin: 15px;
     }
-        button{
-            width: 150px;
-            height: 75px;
-            background-color: white;
-            border: none;
+    .hold_type{
+        display: flex;
+        font-size: 16px;
+        align-items: center;
+        justify-content: center;
+        width: 150px;
+        height: 75px;
+        margin: 5px;
+        background-color: white;
+        border: none;
+        color: black;
+        padding: 5px;
+    }
+        .hold_type:hover, .active div{
+            background-color: rgb(255, 0, 0, .8);
+            color: white;
         }
     .range-date-selector{
         width: 100%;
@@ -40,14 +54,24 @@
     margin-bottom: 15px;
     padding: 15px;
 }
+    .performer-type{
+        display: flex;
+        width: 100%;
+        font-size: 16px;
+        padding: 5px;
+        text-align: left;
+    }
     input[type="radio"]{
-        margin-left: 15px;
+        margin-left: 0px;
     }
 .package-support-header{
     width: 100%;
     padding: 15px;
     text-align: center;
     margin-top: 15px;
+    text-decoration: underline dotted red;
+    font-style: italic;
+    font-size: 30px;
 }
 .media{
     width: 100%;
@@ -76,4 +100,7 @@
 .org-detail{
     width: 100%;
     padding: 15px;
+}
+textarea{
+    width: 100%;
 }

@@ -12,6 +12,7 @@ class SingleHold extends Component {
         const days = MonthDayCounts[this.props.appState.holdmonth_start]
         return(
             <div className="single-hold-selector">
+                FROM:
                 <div className="date-selector">
                     <select key="start-month-selector" className="month-selector" onChange={e => this.props.handleSingleHold('holdmonth_start', 'holdmonth_end', e.target.value)}>
                         {months.map((month, idx) => {

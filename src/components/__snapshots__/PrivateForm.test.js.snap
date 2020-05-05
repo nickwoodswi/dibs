@@ -13,43 +13,46 @@ exports[`PrivateForm renders the UI as expected 1`] = `
     className="hold-type-buttons"
   >
     <a
+      aria-current={null}
       href="/agent/single"
       onClick={[Function]}
     >
-      <button
+      <div
+        className="hold_type"
         id="single"
-        name="hold_type"
         onClick={[Function]}
         value="single"
       >
         A SINGLE DATE
-      </button>
+      </div>
     </a>
     <a
+      aria-current={null}
       href="/agent/range"
       onClick={[Function]}
     >
-      <button
+      <div
+        className="hold_type"
         id="range"
-        name="hold_type"
         onClick={[Function]}
         value="range"
       >
         A RANGE OF DATES
-      </button>
+      </div>
     </a>
     <a
+      aria-current={null}
       href="/agent/multi"
       onClick={[Function]}
     >
-      <button
+      <div
+        className="hold_type"
         id="multiple"
-        name="hold_type"
         onClick={[Function]}
         value="multiple"
       >
         MULTIPLE DATES
-      </button>
+      </div>
     </a>
   </div>
   <div
@@ -66,30 +69,34 @@ exports[`PrivateForm renders the UI as expected 1`] = `
       placeholder="Your Home ZIP Code"
       type="text"
     />
-    <input
-      id="band"
-      name="performance_type"
-      onChange={[Function]}
-      type="radio"
-      value="band"
-    />
-    Band
-    <input
-      id="solo"
-      name="performance_type"
-      onChange={[Function]}
-      type="radio"
-      value="solo"
-    />
-    Solo Performer
-    <input
-      id="dj"
-      name="performance_type"
-      onChange={[Function]}
-      type="radio"
-      value="dj"
-    />
-    DJ
+    <div
+      className="performer-type"
+    >
+      <input
+        id="band"
+        name="performance_type"
+        onChange={[Function]}
+        type="radio"
+        value="band"
+      />
+      Band
+      <input
+        id="solo"
+        name="performance_type"
+        onChange={[Function]}
+        type="radio"
+        value="solo"
+      />
+      Solo Performer
+      <input
+        id="dj"
+        name="performance_type"
+        onChange={[Function]}
+        type="radio"
+        value="dj"
+      />
+      DJ
+    </div>
   </div>
   <div
     className="media"
@@ -155,30 +162,34 @@ exports[`PrivateForm renders the UI as expected 1`] = `
       placeholder="Direct Support"
       type="text"
     />
-    <input
-      id="band-2"
-      name="support_type-2"
-      onChange={[Function]}
-      type="radio"
-      value="band"
-    />
-    Band
-    <input
-      id="solo-2"
-      name="support_type-2"
-      onChange={[Function]}
-      type="radio"
-      value="solo"
-    />
-    Solo Performer
-    <input
-      id="dj-2"
-      name="support_type-2"
-      onChange={[Function]}
-      type="radio"
-      value="dj"
-    />
-    DJ
+    <div
+      className="performer-type"
+    >
+      <input
+        id="band-2"
+        name="support_type-2"
+        onChange={[Function]}
+        type="radio"
+        value="band"
+      />
+      Band
+      <input
+        id="solo-2"
+        name="support_type-2"
+        onChange={[Function]}
+        type="radio"
+        value="solo"
+      />
+      Solo Performer
+      <input
+        id="dj-2"
+        name="support_type-2"
+        onChange={[Function]}
+        type="radio"
+        value="dj"
+      />
+      DJ
+    </div>
   </div>
   <div
     className="media"
@@ -217,30 +228,34 @@ exports[`PrivateForm renders the UI as expected 1`] = `
       placeholder="Opener"
       type="text"
     />
-    <input
-      id="band-3"
-      name="support_type3"
-      onChange={[Function]}
-      type="radio"
-      value="band"
-    />
-    Band
-    <input
-      id="solo-3"
-      name="support_type3"
-      onChange={[Function]}
-      type="radio"
-      value="solo"
-    />
-    Solo Performer
-    <input
-      id="dj-3"
-      name="support_type3"
-      onChange={[Function]}
-      type="radio"
-      value="dj"
-    />
-    DJ
+    <div
+      className="performer-type"
+    >
+      <input
+        id="band-3"
+        name="support_type3"
+        onChange={[Function]}
+        type="radio"
+        value="band"
+      />
+      Band
+      <input
+        id="solo-3"
+        name="support_type3"
+        onChange={[Function]}
+        type="radio"
+        value="solo"
+      />
+      Solo Performer
+      <input
+        id="dj-3"
+        name="support_type3"
+        onChange={[Function]}
+        type="radio"
+        value="dj"
+      />
+      DJ
+    </div>
   </div>
   <div
     className="media"
@@ -281,33 +296,37 @@ exports[`PrivateForm renders the UI as expected 1`] = `
   >
     <input
       onChange={[Function]}
-      placeholder="Second Opener Title"
+      placeholder="Second Opener"
       type="text"
     />
-    <input
-      id="band-4"
-      name="support_type4"
-      onChange={[Function]}
-      type="radio"
-      value="band"
-    />
-    Band
-    <input
-      id="solo-4"
-      name="support_type4"
-      onChange={[Function]}
-      type="radio"
-      value="solo"
-    />
-    Solo Performer
-    <input
-      id="dj-4"
-      name="support_type4"
-      onChange={[Function]}
-      type="radio"
-      value="dj"
-    />
-    DJ
+    <div
+      className="performer-type"
+    >
+      <input
+        id="band-4"
+        name="support_type4"
+        onChange={[Function]}
+        type="radio"
+        value="band"
+      />
+      Band
+      <input
+        id="solo-4"
+        name="support_type4"
+        onChange={[Function]}
+        type="radio"
+        value="solo"
+      />
+      Solo Performer
+      <input
+        id="dj-4"
+        name="support_type4"
+        onChange={[Function]}
+        type="radio"
+        value="dj"
+      />
+      DJ
+    </div>
   </div>
   <div
     className="media"
@@ -347,7 +366,7 @@ exports[`PrivateForm renders the UI as expected 1`] = `
     className="event-detail"
   >
     Provide any specific technical needs or details here:
-    <input
+    <textarea
       id="event-detail"
       onChange={[Function]}
       type="text"
@@ -401,14 +420,16 @@ exports[`PrivateForm renders the UI as expected 1`] = `
     className="place-hold-button-container"
   >
     <a
+      aria-current={null}
       href="/holdconfirmation"
       onClick={[Function]}
     >
-      <button
+      <div
+        className="submit-button"
         onClick={[Function]}
       >
-        PLACE HOLDS
-      </button>
+        +PLACE HOLDS
+      </div>
     </a>
   </div>
 </div>

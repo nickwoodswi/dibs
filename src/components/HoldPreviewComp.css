@@ -9,3 +9,7 @@
     height: 36px;
     background-color: white;
 }
+    #delete-button:active{
+        background-color: red;
+        color: white;
+    }

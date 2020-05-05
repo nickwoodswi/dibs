@@ -4,6 +4,7 @@ exports[`SingleHold renders the UI as expected 1`] = `
 <div
   className="single-hold-selector"
 >
+  FROM:
   <div
     className="date-selector"
   >

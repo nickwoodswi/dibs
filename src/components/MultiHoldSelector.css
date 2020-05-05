@@ -11,3 +11,7 @@
 .add-hold-range-button{
     width: 100%;
 }
+    .add-hold-range-button:active{
+        color: white;
+        background-color: red;
+    }
